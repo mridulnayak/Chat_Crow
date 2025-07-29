@@ -1,0 +1,48 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.*;
+
+public class Server_1 extends JFrame implements ActionListener{
+    Server_1(){           //constructor 
+      
+        setLayout(null);
+        setSize(450, 700);  //sets size of frame
+        setLocation(200,50); //sets location of frame
+        getContentPane().setBackground(Color.BLUE); //sets background color of frame
+
+     
+        JPanel p1 = new JPanel();
+        p1.setBounds(0,0,450,70); //sets position and size of panel
+        p1.setBackground(Color.BLACK); //sets background color of panel
+        p1.setLayout(null); //sets layout of panel to null
+        add(p1); //adds panel to frame
+       
+
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/3.png"));
+        Image i2 = i1.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT); //scales image
+        ImageIcon i3 = new ImageIcon(i2); //creates new image icon with scaled image
+        JLabel back = new JLabel(i3); //creates label with image
+        back.setBounds(5,20,25,25); //sets position and size of label
+        add(back); //adds label to frame
+        p1.add(back); //adds label to panel
+        back.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent ae){}
+        }); //adds mouse listener to label
+        
+
+       
+        setVisible(true); //makes frame visible)
+    }
+    public void actionPerformed(ActionEvent ae){
+            
+        }
+    
+    public static void main(String[] args){
+        new Server_1(); //anonymous object 
+
+    }
+}
+
